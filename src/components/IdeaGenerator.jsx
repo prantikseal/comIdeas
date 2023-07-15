@@ -21,7 +21,7 @@ const IdeaGenerator = () => {
     const prompt = `Generate 3 Ideas where Idea Purpose: ${ideaPurpose} \n Company Name: ${companyName} \n Company Details: ${companyDetails} to create proof of work profiles and apply for opportunities within the company.`;
     console.log(prompt);
     // const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
-    const OPENAI_API_KEY= "pk-zaSlKxLpVRJhFlipQSKBNleQPgOLPySUlhMNSWbHZPfQHpGP"
+    const OPENAI_API_KEY= "pk-albal"
     const response = await axios
       .post(
         "https://api.pawan.krd/v1/completions",
