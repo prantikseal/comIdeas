@@ -1,0 +1,68 @@
+.navBar{
+    margin: 2rem 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    /* stiky */
+    position: sticky;
+    top: 1rem;
+    z-index: 999;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.navBar h1 a{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.navBar h1 span{
+    transition: all 0.3s ease;
+    color: red;
+}   
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation .navLink{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation .navLink a{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px){
+    .navBar{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation{
+        margin-top: 1rem;
+    }
+
+    .navigation .navLink a{
+        margin-left: 0.8rem;
+        margin-top: 1rem;
+    }
+}
+
+
+.navigation .navLink a:hover{
+    color: grey;
+}

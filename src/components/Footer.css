@@ -1,0 +1,19 @@
+footer {
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer-text {
+    color: #1E1E1E;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.33406rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.footer-text a{
+    color: #1E1E1E;
+
+}
