@@ -2,6 +2,7 @@ import "./IdeaGenerator.css";
 import { useState } from "react";
 import axios from "axios";
 
+const OPENAI_API_KEY = import.meta.env.VITE_REACT_APP_OPENAI_API_KEY;
 
 const IdeaGenerator = () => {
   const [chatGPTResponse, setChatGPTResponse] = useState("Your Ideas will be Listed here :)");
@@ -15,11 +16,8 @@ const IdeaGenerator = () => {
     const prompt = `Generate 3 Ideas where Idea Purpose: ${ideaPurpose} \n Company Name: ${companyName} \n Company Details: ${companyDetails} to create proof of work projects and apply for opportunities within the company.`;
     console.log(prompt);
 
-    const OPENAI_API_KEY = import.meta.env.VITE_REACT_APP_OPENAI_API_KEY;
 
-    console.log(OPENAI_API_KEY);
-
-
+    setChatGPTResponse("Generating Ideas...");
     const response = await axios
       .post(
 
@@ -28,7 +26,7 @@ const IdeaGenerator = () => {
           model: "text-davinci-003",
           max_tokens: 200,
           temperature: 0.3,
-          prompt: `${prompt} \n Idea 1: \n Idea 2: \n Idea 3: (give this is proper html so that this could be presented in a better way.)`,
+          prompt: `${prompt} <p>Idea 1:{here goes the idea 1}</p> <p>Idea 2:{here goes the idea 2}</p> <p>Idea 3:{here goes the idea 3}</p>`,
         },
         {
           headers: {
@@ -79,7 +77,7 @@ const IdeaGenerator = () => {
         {" "}
         <div className="output_section">
           {" "}
-          <p className="output_starter"> Your Ideas will be Listed here :) </p>
+          {/* <p className="output_starter"> Your Ideas will be Listed here :) </p> */}
           {chatGPTResponse && (
             <div>
               <p>{chatGPTResponse}</p>
