@@ -15,7 +15,7 @@ const IdeaGenerator = () => {
     const prompt = `Generate 3 Ideas where Idea Purpose: ${ideaPurpose} \n Company Name: ${companyName} \n Company Details: ${companyDetails} to create proof of work projects and apply for opportunities within the company.`;
     console.log(prompt);
 
-    const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+    const OPENAI_API_KEY = import.meta.env.VITE_REACT_APP_OPENAI_API_KEY;
 
     console.log(OPENAI_API_KEY);
 
@@ -26,9 +26,9 @@ const IdeaGenerator = () => {
         "https://chimeragpt.adventblocks.cc/v1/completions",
         {
           model: "text-davinci-003",
-          max_tokens: 100,
+          max_tokens: 200,
           temperature: 0.3,
-          prompt: `${prompt} \n Idea 1: \n Idea 2: \n Idea 3:`,
+          prompt: `${prompt} \n Idea 1: \n Idea 2: \n Idea 3: (give this is proper html so that this could be presented in a better way.)`,
         },
         {
           headers: {
